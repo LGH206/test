@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Race Results</title>
+</head>
+<body>
+
+<h2>Race Results</h2>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Position</th>
+        <th>Score</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="r : ${results}">
+        <td th:text="${r.resultId}"></td>
+        <td th:text="${r.position}"></td>
+        <td th:text="${r.score}"></td>
+
+        <td>
+            <a th:href="@{/results/{id}(id=${r.resultId})}">
+                Detail
+            </a>
+
+            |
+
+            <a th:href="@{/results/delete/{id}(id=${r.resultId})}">
+                Delete
+            </a>
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>

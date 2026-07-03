@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result Detail</title>
+</head>
+<body>
+
+<h2>Race Result Detail</h2>
+
+<p>
+    ID:
+    <span th:text="${result.resultId}"></span>
+</p>
+
+<p>
+    Position:
+    <span th:text="${result.position}"></span>
+</p>
+
+<p>
+    Score:
+    <span th:text="${result.score}"></span>
+</p>
+
+<p>
+    Status:
+    <span th:text="${result.verificationStatus}"></span>
+</p>
+
+<a th:href="@{/results}">
+    Back
+</a>
+
+</body>
+</html>
